@@ -14,14 +14,8 @@ class CompleteReport(SimpleReport):
     def generate(cls, data):
         prods_count = cls._get_prods_count(data)
 
-        simple_report = super()._generate(
-            oldest_fab=cls._find_oldest_fab(data),
-            closest_exp=cls._find_closest_exp(data),
-            most_prods=cls._find_most_prod_comp(prods_count),
-        )
-
         return CompleteReport.REPORT_FMT.format(
-            simple_report=simple_report,
+            simple_report=super()._generate(data, prods_count),
             prods_per_comp=cls._generate_prods_per_comp(prods_count)
         )
 

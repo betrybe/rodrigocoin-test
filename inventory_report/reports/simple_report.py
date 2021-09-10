@@ -11,18 +11,14 @@ class SimpleReport:
 
     @classmethod
     def generate(cls, data):
-        return cls._generate(
-            oldest_fab=cls._find_oldest_fab(data),
-            closest_exp=cls._find_closest_exp(data),
-            most_prods=cls._find_most_prod_comp(cls._get_prods_count(data)),
-        )
+        return cls._generate(data, cls._get_prods_count(data))
 
     @classmethod
-    def _generate(cls, oldest_fab, closest_exp, most_prods):
+    def _generate(cls, data, prods_count):
         return SimpleReport.REPORT_FMT.format(
-            oldest_fab=oldest_fab,
-            closest_exp=closest_exp,
-            most_prods=most_prods,
+            oldest_fab=cls._find_oldest_fab(data),
+            closest_exp=cls._find_closest_exp(data),
+            most_prods=cls._find_most_prod_comp(prods_count),
         )
 
     @classmethod
