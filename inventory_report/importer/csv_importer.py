@@ -9,4 +9,8 @@ class CsvImporter(Importer):
         assert_file_extension(filename, 'csv')
 
         with open(filename) as f:
-            return list(csv.DictReader(f))
+            # force each item to be a dict
+            return [
+                dict(item)
+                for item in csv.DictReader(f)
+            ]

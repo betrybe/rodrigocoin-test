@@ -9,4 +9,8 @@ class JsonImporter(Importer):
         assert_file_extension(filename, 'json')
 
         with open(filename) as f:
-            return json.load(f)
+            # force each item to be a dict
+            return [
+                dict(item)
+                for item in json.load(f)
+            ]

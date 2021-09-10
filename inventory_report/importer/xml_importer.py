@@ -11,4 +11,8 @@ class XmlImporter(Importer):
         with open(filename, 'rb') as f:
             parsed_data = xmltodict.parse(f)
 
-            return parsed_data['dataset']['record']
+            # force each item to be a dict
+            return [
+                dict(item)
+                for item in parsed_data['dataset']['record']
+            ]
