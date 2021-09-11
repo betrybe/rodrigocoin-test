@@ -1,5 +1,18 @@
 class InventoryIterator:
+    """
+    Iterates over an inventory data.
+    """
+
     def __init__(self, data):
+        """
+        Args:
+            data (list): the data to be iterated over
+
+        Attributes:
+             data (list): the data provided
+             curr (int): index of where the iterator is
+        """
+
         self.data = data
         self.curr = 0
 
