@@ -11,6 +11,15 @@ class SimpleReport:
 
     @classmethod
     def generate(cls, data):
+        """
+        Generates a simple report from the data provided.
+
+        Args:
+            data (list): a list of items(dict)
+
+        Returns:
+            str: the formatted report
+        """
         return cls._generate(data, cls._get_prods_count(data))
 
     @classmethod

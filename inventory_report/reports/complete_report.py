@@ -12,6 +12,17 @@ class CompleteReport(SimpleReport):
 
     @classmethod
     def generate(cls, data):
+        """
+        Generates a complete report from the data provided.
+        The complete report includes the simple report (SimpleReport)
+        and adds further information.
+
+        Args:
+            data (list): a list of items(dict)
+
+        Returns:
+            str: the formatted report
+        """
         prods_count = cls._get_prods_count(data)
 
         return CompleteReport.REPORT_FMT.format(
