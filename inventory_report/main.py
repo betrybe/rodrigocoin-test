@@ -23,6 +23,10 @@ def _print_report(filename, report_type):
 
 
 def main():
+    """
+    Receives filename and report type from command line
+    and prints the corresponding report.
+    """
     if len(sys.argv) != 3:
         print("Verifique os argumentos", file=sys.stderr)
         return
