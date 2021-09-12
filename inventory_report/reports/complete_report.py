@@ -4,7 +4,7 @@ from inventory_report.reports.simple_report import SimpleReport
 class CompleteReport(SimpleReport):
     REPORT_FMT = (
         "{simple_report}\n"
-        "Produtos estocados por empresa:\n"
+        "Produtos estocados por empresa: \n"
         "{prods_per_comp}"
     )
 
