@@ -15,7 +15,7 @@ class Inventory:
 
         Args:
             filename (str): path to file
-            report_type (str): type of the report, either 'simples' or 'completo'
+            report_type (str): type of the report ('simples' or 'completo')
 
         Returns:
             str: report formatted according to its type
